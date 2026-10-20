@@ -48,3 +48,7 @@ mysql/*.log
 mysql/#innodb_temp/
 /projects/laravel_my/storage
 /projects/laravel_my/bootstrap/cache
+/.2tree.sh
+/.4me
+/README0.md
+/structure.txt
