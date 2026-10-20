@@ -1,0 +1,50 @@
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Keep the demo Laravel configuration
+!projects/laravel/.env
+
+# PHP / Laravel
+**/vendor/
+**/storage/logs/*
+**/storage/framework/cache/*
+**/storage/framework/sessions/*
+**/storage/framework/views/
+**/bootstrap/cache/*
+**/public/build/
+
+# Node
+**/node_modules/
+
+# IDE
+.idea/
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Temporary files
+*.log
+*.tmp
+*.bak
+/projects/laravel/bootstrap/cache
+/projects/laravel/storage
+
+# MySQL runtime files
+mysql/mysql.sock
+mysql/mysql.sock.lock
+mysql/*.pid
+mysql/*.sock
+mysql/*.sock.lock
+
+# MySQL temporary and runtime files
+mysql/ib_buffer_pool.incomplete
+mysql/binlog.index
+mysql/*.log
+mysql/#innodb_temp/
+/projects/laravel_my/storage
+/projects/laravel_my/bootstrap/cache
