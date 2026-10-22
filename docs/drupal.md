@@ -2,21 +2,25 @@
 
 Далее предполагается, что репозиторий sy_lamp находится в D:\sy_lamp, а новый проект будет называться drupal_my. Если у Вас другой путь или имя проекта, замените их в командах на свои.
 
+Запустите контейнеры и соберите PHP-образ (если еще не запускали):
+
+```powershell
+cd D:\sy_lamp\stack
+docker compose up -d --build
+```
+**Примечание:** при первом запуске команда может выполняться несколько минут: Docker скачивает необходимые образы и собирает PHP-образ. Дождитесь завершения команды, прежде чем переходить к следующему шагу.
+
 **1. Создать проект:**
 
 ```powershell
-D:
-cd /sy_lamp/projects/bin
 ./composer create-project drupal/recommended-project ../drupal_my
-Copy-Item .\composer.bat  ..\drupal_my\
+# Копируем BAT-обёртку для работы с проектом через Docker
+Copy-Item .\composer.bat ..\drupal_my\
 ```
 
-
-**2. Запускаем контейнеры и bash:**
+**2. Запускаем bash:**
 
 ```powershell
-cd ..\..\stack
-docker compose up -d --build
 docker compose -f docker-compose.yml exec php bash
 cd /var/www/projects/drupal_my
 ```
