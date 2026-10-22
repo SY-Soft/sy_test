@@ -13,7 +13,7 @@ docker compose up -d --build
 **1. Создать проект без автоматического выполнения Composer-скриптов:**
 
 ```powershell
-cd D:\sy_lamp\projects\bin
+cd ..\projects\bin
 .\composer create-project laravel/laravel ../laravel_my --no-scripts
 # Копируем BAT-обёртки для работы с проектом через Docker
 Copy-Item .\composer.bat, .\artisan.bat ..\laravel_my\

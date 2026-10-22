@@ -15,7 +15,7 @@ docker compose up -d --build
 ```powershell
 ./composer create-project drupal/recommended-project ../drupal_my
 # Копируем BAT-обёртку для работы с проектом через Docker
-Copy-Item .\composer.bat ..\drupal_my\
+Copy-Item ..\projects\bin\composer.bat ..\projects\drupal_my\
 ```
 
 **2. Запускаем bash:**
