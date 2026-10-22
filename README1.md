@@ -137,3 +137,9 @@ xdebug.client_port=9003
 - После добавления проекта перезапустите PHP-контейнер: entrypoint подготавливает каталоги при запуске.
 - Данные MySQL хранятся отдельно от контейнера.
 - Окружение предназначено для локальной разработки, не для production.
+
+
+https://github.com/SY-Soft/sy_test/blob/master/README.md
+https://github.com/SY-Soft/sy_test/blob/master/docs/drupal.md
+https://github.com/SY-Soft/sy_test/blob/master/docs/laravel.md
+https://github.com/SY-Soft/sy_test/blob/master/docs/start.md

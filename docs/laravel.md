@@ -69,8 +69,6 @@ docker compose -f ..\..\stack\docker-compose.yml exec php bash
 cd /var/www/projects/laravel_my
 ```
 
-После этого проект доступен по адресу [http://laravel_my.localhost](http://laravel_my.localhost).
-
 ## Хранение сессий Laravel
 
 Параметр `SESSION_DRIVER` в `.env` определяет, где Laravel хранит пользовательские сессии.

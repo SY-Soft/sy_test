@@ -1,4 +1,4 @@
-## Установка Laravel
+## Установка Drupal
 
 Далее предполагается, что репозиторий sy_lamp находится в D:\sy_lamp, а новый проект будет называться drupal_my. Если у Вас другой путь или имя проекта, замените их в командах на свои.
 
@@ -15,8 +15,9 @@ Copy-Item .\composer.bat  ..\drupal_my\
 **2. Запускаем контейнеры и bash:**
 
 ```powershell
+cd ..\..\stack
 docker compose up -d --build
-docker compose -f ..\stack\docker-compose.yml exec php bash
+docker compose -f docker-compose.yml exec php bash
 cd /var/www/projects/drupal_my
 ```
 
@@ -24,7 +25,7 @@ cd /var/www/projects/drupal_my
 
 Подготавливаем файловую систему и файл настроек для установки Drupal
 
-```powershell
+```bash
 mkdir -p ./web/sites/default/files/translations
 chown -R www-data:www-data ./web/sites/default/files
 cp ./web/sites/default/default.settings.php ./web/sites/default/settings.php
@@ -69,9 +70,8 @@ chmod 775 ./web/sites/default/settings.php
 **6. Снять права на запись**
 
 Снять права на запись (после установки):
-
+```bash
 chmod 755 /var/www/projects/drupal_my/web/sites/default
-
 chmod 644 /var/www/projects/drupal_my/web/sites/default/settings.php
-
+```
 **Drupal** установлен!
