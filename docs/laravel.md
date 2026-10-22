@@ -61,7 +61,7 @@ docker compose -f ..\..\stack\docker-compose.yml restart php
 .\artisan migrate
 ```
 
-После этого проект доступен по адресу `http://laravel_my.localhost`.
+**[Laravel](http://laravel_my.localhost)** установлен!
 
 **7. Если нужен bash:**
 

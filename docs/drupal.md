@@ -10,39 +10,38 @@ docker compose up -d --build
 ```
 **Примечание:** при первом запуске команда может выполняться несколько минут: Docker скачивает необходимые образы и собирает PHP-образ. Дождитесь завершения команды, прежде чем переходить к следующему шагу.
 
-**1. Создать проект:**
 
-```powershell
-./composer create-project drupal/recommended-project ../drupal_my
-# Копируем BAT-обёртку для работы с проектом через Docker
-Copy-Item ..\projects\bin\composer.bat ..\projects\drupal_my\
-```
-
-**2. Запускаем bash:**
+**1. Запускаем bash и создать проект:**
 
 ```powershell
 docker compose -f docker-compose.yml exec php bash
-cd /var/www/projects/drupal_my
+cd /var/www/projects
+composer create-project drupal/recommended-project drupal_my
+# Копируем BAT-обёртку для работы с проектом через Docker
+cp bin/composer.bat drupal_my
 ```
 
-**3. Файловая система:**
+**2. Файловая система:**
 
 Подготавливаем файловую систему и файл настроек для установки Drupal
 
+_(если копи-паст - в баше можно всю пачку сразу)_
+
 ```bash
+cd /var/www/projects/drupal_my
 mkdir -p ./web/sites/default/files/translations
 chown -R www-data:www-data ./web/sites/default/files
 cp ./web/sites/default/default.settings.php ./web/sites/default/settings.php
-chmod -R 775 ./web/sites/default/files
-chmod 775 ./web/sites/default/settings.php
+chmod -R 777 ./web/sites/default/files
+chmod 777 ./web/sites/default/settings.php
 ```
 
-**4. Создать базу данных**
+**3. Создать базу данных**
 
 В [phpMyAdmin](http://localhost:8080) (http://localhost:8080 Логин: `root`, пароль: `root`) создать базу данных `drupal_my` с кодировкой `utf8mb4` и сопоставлением `utf8mb4_general_ci`.
 
 
-**5. Установка**
+**4. Установка**
 
 
 Переходим по адресу [http://drupal_my.localhost](http://drupal_my.localhost) и устанавливаем Drupal
@@ -71,11 +70,11 @@ chmod 775 ./web/sites/default/settings.php
 Если эта база данных будет использоваться более чем одним приложением, уникальный префикс таблиц, например drupal_, поможет предотвратить конфликты.
 
 
-**6. Снять права на запись**
+**5. Снять права на запись**
 
 Снять права на запись (после установки):
 ```bash
 chmod 755 /var/www/projects/drupal_my/web/sites/default
 chmod 644 /var/www/projects/drupal_my/web/sites/default/settings.php
 ```
-**Drupal** установлен!
+**[Drupal](http://drupal_my.localhost)** установлен! 
