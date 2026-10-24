@@ -43,6 +43,7 @@ RUN docker-php-ext-install -j"$(nproc)" \
     gd
 
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
+COPY php-custom.ini /usr/local/etc/php/conf.d/zz-custom.ini
 
 ENV COMPOSER_PROCESS_TIMEOUT=1800
 

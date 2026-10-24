@@ -1,3 +1,4 @@
+
 # Environment and secrets
 .env
 .env.*
@@ -35,17 +36,23 @@ Desktop.ini
 /projects/laravel/storage
 
 # MySQL runtime files
-mysql/mysql.sock
-mysql/mysql.sock.lock
-mysql/*.pid
-mysql/*.sock
-mysql/*.sock.lock
+/mysql/mysql.sock
+/mysql/mysql.sock.lock
+/mysql/*.pid
+/mysql/*.sock
+/mysql/*.sock.lock
+/mysql/auto.cnf
+/mysql/binlog.*
+/mysql/ib_buffer_pool
+/mysql/ib_buffer_pool.incomplete
+/mysql/ibtmp*
+/mysql/#ib_*
+/mysql/#innodb_temp/
 
 # MySQL temporary and runtime files
-mysql/ib_buffer_pool.incomplete
-mysql/binlog.index
-mysql/*.log
-mysql/#innodb_temp/
+/mysql/#innodb_redo/
+/mysql/#innodb_doublewrite/
+
 /projects/laravel_my/storage
 /projects/laravel_my/bootstrap/cache
 /.2tree.sh
